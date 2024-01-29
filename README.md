@@ -76,7 +76,7 @@ Similar al comando anterior, pero se ejecuta en segundo plano.
 ```
 docker-compose down
 ```
-Detiene y elimina los contenedores, redes y volúmenes creados por el `docker-compose.yml``
+Detiene y elimina los contenedores, redes y volúmenes creados por el `docker-compose.yml`.
 ```
 docker-compose start
 ```
