@@ -14,6 +14,19 @@ Para poder comenzar tendremos que buscar la imagen de Odoo en [docker hub](http:
 
 ### Servicio de Odoo:
 
+```docker
+  web:
+  image: odoo:16.0
+  depends_on:
+    - db
+  ports:
+    - "8069:8069"
+  environment:
+    - HOST=db
+    - USER=odoo
+    - PASSWORD=odoo
+```
+
 - Imagen: _odoo:16.0_
 
 - Dependencias: El servicio de Odoo depende del servicio de base de datos (db).
@@ -27,6 +40,15 @@ Para poder comenzar tendremos que buscar la imagen de Odoo en [docker hub](http:
 
 #### Servicio de PostgreSQL:
 
+```docker
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+```
+
 - Imagen: _postgres:15_
 
 - Puertos:
@@ -34,10 +56,9 @@ Para poder comenzar tendremos que buscar la imagen de Odoo en [docker hub](http:
     - PostgreSQL estará en el puerto _5433_ del host.
 
 - Variables de Entorno:
-
-    - POSTGRES_DB: Nombre de la base de datos (en este caso, "postgres").
-    - POSTGRES_USER: Usuario de la base de datos (en este caso, "odoo").
-    - POSTGRES_PASSWORD: Contraseña del usuario de la base de datos (en este caso, "odoo").
+    - **POSTGRES_DB**: Nombre de la base de datos (en este caso, "postgres").
+    - **POSTGRES_USER**: Usuario de la base de datos (en este caso, "odoo").
+    - **POSTGRES_PASSWORD**: Contraseña del usuario de la base de datos (en este caso, "odoo").
 
 ### Testear conexión al servicio
 
