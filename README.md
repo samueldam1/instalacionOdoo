@@ -60,6 +60,43 @@ Para poder comenzar tendremos que buscar la imagen de Odoo en [docker hub](http:
     - **POSTGRES_USER**: Usuario de la base de datos (en este caso, "odoo").
     - **POSTGRES_PASSWORD**: Contraseña del usuario de la base de datos (en este caso, "odoo").
 
+## Comandos docker
+
+Para interactuar con este archivo `docker-compose.yml` tenemos una serie de comandos:
+```
+docker-compose up
+```
+Este comando se utiliza para crear e iniciar los servicios definidos en el archivo `docker-compose.yml`.
+
+```
+docker-compose up -d
+```
+Similar al comando anterior, pero se ejecuta en segundo plano.
+
+```
+docker-compose down
+```
+Detiene y elimina los contenedores, redes y volúmenes creados por el `docker-compose.yml``
+```
+docker-compose start
+```
+Inicia los contenedores existentes definidos en el archivo `docker-compose.yml`.
+
+```
+docker-compose stop
+```
+Detiene los contenedores definidos en el archivo `docker-compose.yml` **sin eliminarlos**.
+
+```
+docker-compose restart
+```
+Reinicia los contenedores.
+
+```
+docker-compose ps
+```
+Muestra el estado de los servicios.
+
 ### Testear conexión al servicio
 
 Desde el desplegable derecho de 'Database' podemos hacer una nueva conexión de a Postgres.
